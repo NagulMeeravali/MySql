@@ -1,0 +1,15 @@
+ select * from tablename into outfile 'path/abc.txt';
+ select * from tablename into outfile 'path/abc.xls';
+ select * from tablename into outfile 'path/abc.xls' fields terminated   by ',';
+ select * from tablename into outfile 'path/abc.xls' fields terminated    by ',' enclosed by '"';
+ select * from student into outfile 'D:\abc.xls' fields terminated   by  ',' enclosed by '"' lines terminated by '\r\n';
+ select * from student into outfile 'D:\abc.xls';
+-----------------------------------------------------------------
+5)import data into mysql:
+load data local infile 'path/filename' into table student;
+note: columns should separated by tab space. 
+load data local infile 'path/filename' into table student fields terminated by ',';
+load data local infile 'path/filename' into table student fields terminated by ',' lines terminated by '\r\n';
+
+
+load data local infile 'path/filename' into table student fields terminated by ',' enclosed by '"' escaped by '"' lines terminated by '\r\n';

@@ -1,0 +1,96 @@
+DDL- DML
+create 
+update
+insert 
+select
+delete
+drop
+truncate
+where
+alter
+modify
+rename
+like 
+not like
+between
+not between
+Comaparison operators(<,>,<=,>=,!=)
+Arithmetic Operators
+And 
+Or
+In 
+Not In
+is null
+is not null
+order by 
+group by
+rand()
+Min()
+Max()
+Avg()
+count()
+Sum()
+limit
+AS - Alias
+Function CONCAT()
+DISTINCT
+primary key
+not null
+foreign key
+unique key
+temparory table
+joins (inner join,left join,right join,full join)
+
+
+index
+subqueries (where In,where Not In,select)
+1. select name, marks from std1 where name in(select name from std2);
+2. select name,marks from std1 where name Not in (select name from std2 where marks<35);
+SELECT column1 = (SELECT column-name FROM table-name WHERE condition),
+       column-names
+  FROM table-name
+ WEHRE condition
+select name=(select name from std2 where location='hyderabad'),mail from std1 where gender='female';
+
+
+date  yyyy-mm-dd
+
+create table std1(name varchar(12),dd date);
+insert into std1 values('aaa','2017-12-22');
+insert into std1 values('bbb',curdate());
+select * from std1 where year(dd)=2017;
+select * from std1 where Month(dd)=12;
+select * from std1 where day(dd)=23;
+select name from std1 where to_days('2016-10-10')-todays('2017-10-10')>5;
+now()
+curdate()
+curtime()
+view:
+A view is a virtual table that contains no physical data. It provide an alternative way to look at the data.
+Transactions:
+START TRANSACTION;
+UPDATE accounts SET balance = balance - 100 WHERE name = 'Paul';
+UPDATE accounts SET balance = balance + 100 WHERE name = 'Peter';
+COMMIT;     
+rollback;  //here we cant get last data.
+A transaction groups a set of operations into a unit that meets the ACID test:
+Atomicity: If all the operations succeed, changes are committed to the database. If any of the operations fails, the entire transaction is rolled back, and no change is made to the database. In other words, there is no partial update.
+Consistency: A transaction transform the database from one consistent state to another consistent state.
+Isolation: Changes to a transaction are not visible to another transaction until they are committed.
+Durability: Committed changes are durable and never lost.
+
+
+In SQL, a view is a virtual table based on the result-set of an SQL statement.
+
+A view contains rows and columns, just like a real table. The fields in a view are fields from one or more real tables in the database.
+
+syntax:
+CREATE VIEW view_name AS SELECT column1, column2, ... FROM table_name
+WHERE condition; 
+
+sql create or replace view :
+CREATE or replace VIEW view_name AS SELECT column1, column2, ... FROM table_name
+WHERE condition; 
+
+drop view dd1;
+
